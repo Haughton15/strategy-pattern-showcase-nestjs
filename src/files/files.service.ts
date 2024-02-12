@@ -2,12 +2,11 @@ import { Injectable } from "@nestjs/common";
 import { UploadFilesDto } from "./dto/upload-files.dto";
 import { DataSource, Repository } from "typeorm";
 import { Files } from "./entities/files.entity";
-//import { FilesType } from "./entities/files-types.entity";
-//import { v4 as uuidv4 } from "uuid";
 import { InjectRepository } from "@nestjs/typeorm";
 import { FileStrategy } from "./strategies/file-strategy.interface";
 import { BackblazeStrategy } from "./strategies/backblaze.strategy";
 import { CloudinaryStrategy } from "./strategies/cloudinary.strategt";
+import { FilesType } from "./entities/files-types.entity";
 
 @Injectable()
 export class FilesService {
@@ -34,26 +33,23 @@ export class FilesService {
       }
       const response = await this.strategy.upload(file);
       const lastSegment: string = response.split("/").pop() as string;
-      console.log('"uid"', lastSegment);
-      console.log(response);
-
-      /*const uuid = uuidv4();
       const { name, typeFile } = uploadFilesDto;
       const fileType = parseInt(typeFile, 10);
+
       const dbFile = queryRunner.manager.create(Files, {
         name,
         filesType: await queryRunner.manager.findOneBy(FilesType, {
           id: fileType,
         }),
         src: response,
-        uuid: uuid,
+        uuid: lastSegment,
       });
-      const savedFile = await queryRunner.manager.save(dbFile);*/
+      const savedFile = await queryRunner.manager.save(dbFile);
 
       await queryRunner.commitTransaction();
       await queryRunner.release();
 
-      return response;
+      return savedFile;
     } catch (error) {
       console.error(
         `Error uploading file '${uploadFilesDto.name}': ${error.message}`,
