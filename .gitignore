@@ -1,0 +1,56 @@
+# Ignorar los archivos de configuración locales
+.env
+.env.local
+.env.*.local
+
+# Ignorar los directorios generados
+node_modules/
+dist/
+coverage/
+
+# Ignorar los archivos de configuración de ESLint y Prettier
+.eslintcache
+.prettierrc.js
+.eslintrc.js
+
+# Ignorar los archivos de registro y archivos de usuario
+logs/
+*.log
+*.log.*
+yarn-error.log
+.pnpm-debug.log
+npm-debug.log*
+
+# Ignorar archivos de respaldo y archivos temporales
+*.bak
+*.swp
+._*
+*~
+
+# Ignorar los archivos de configuración de VSCode
+.vscode/
+
+# Ignorar los archivos de configuración de WebStorm
+.idea/
+.idea/
+
+# Ignorar los archivos de configuración de editorconfig
+.editorconfig
+
+# Ignorar archivos de configuración de Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+
+# Ignorar archivos de sistema Mac
+.DS_Store
+
+# Ignorar archivos de usuario específicos
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.user
+*.sln
+*.tmp
+*.swp

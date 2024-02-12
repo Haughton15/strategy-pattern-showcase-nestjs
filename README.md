@@ -1,0 +1,9 @@
+## PROJECT DESCRIPTION
+
+The project aimed to demonstrate the implementation of the Strategy design pattern within a NestJS application, showcasing a practical approach to software design and development. The Strategy pattern, a behavioral design pattern, allows the definition of a family of algorithms, encapsulating each one and making them interchangeable. This pattern lets the algorithm vary independently from clients that use it, promoting a more flexible and maintainable code structure.
+
+In the context of NestJS, a progressive Node.js framework for building efficient and scalable server-side applications, the Strategy pattern was applied to create a modular and easily adaptable application structure. The project focused on a use case where different strategies for processing user data could be required, such as different validation, sorting, or filtering algorithms, depending on the context or user preferences.
+
+The implementation began with defining a common strategy interface to outline the operations that all concrete strategies must implement. This interface ensures that each strategy adheres to a specific structure, making them interchangeable within the application's ecosystem. Next, several concrete strategy classes were developed, each implementing the strategy interface and providing a unique algorithm for handling user data.
+
+By implementing the Strategy pattern in a NestJS application, this project highlighted how design patterns could be effectively used to solve common software development challenges, promoting better code organization, flexibility, and scalability.
